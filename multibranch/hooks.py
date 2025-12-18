@@ -43,7 +43,13 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Sales Invoice" : "public/js/sales_invoice.js",
+              "Sales Order" : "public/js/sales_order.js",
+              "Purchase Invoice" : "public/js/purchase_invoice.js",
+              "Purchase Order" : "public/js/purchase_order.js",
+              "Stock Entry" : "public/js/stock_entry.js",
+              "Material Request" : "public/js/material_request.js",
+              "Delivery Note" : "public/js/delivery_note.js",}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -114,7 +120,7 @@ app_license = "mit"
 # notification_config = "multibranch.notifications.get_notification_config"
 
 # Permissions
-# -----------
+# -----------js
 # Permissions evaluated in scripted ways
 
 # permission_query_conditions = {
@@ -242,3 +248,38 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+fixtures = [{
+    "dt":"Custom Field",
+    "filters":[
+        ["name","in",[
+            "Material Request-custom_pos_profile",
+            "Delivery Trip-custom_pos_profile",
+            "Delivery Note-custom_pos_profile",
+            "Stock Entry-custom_pos_profile",
+            "Quotation-custom_pos_profile",
+            "Sales Order-custom_pos_profile",
+            "Supplier Quotation-custom_pos_profile",
+            "Purchase Receipt-custom_pos_profile",
+            "Purchase Invoice-custom_pos_profile",
+            "Purchase Order-custom_pos_profile",
+
+           
+        ]]
+    ]
+},
+{
+    "dt":"Property Setter",
+    "filters":[
+        ["name","in",[
+            "Sales Invoice-pos_profile-depends_on",
+           
+
+
+            ]
+         ]
+    ]
+
+},
+]
